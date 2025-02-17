@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+
+    <!-- Quasar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.6.0/dist/quasar.prod.css" rel="stylesheet" />
+
+    <!-- Quasar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.6.0/dist/quasar.umd.prod.js"></script>
+
+    <!-- Quasar Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@quasar/extras/material-icons/material-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="q-app">
+      <q-layout view="hHh lpR fFf">
+        <q-header elevated>
+          <q-toolbar>
+            <q-toolbar-title> Settings </q-toolbar-title>
+          </q-toolbar>
+        </q-header>
+
+        <q-page-container>
+          <q-page class="q-pa-md">
+            <q-card>
+              <q-card-section>
+                <div class="text-h6">Settings</div>
+              </q-card-section>
+
+              <q-card-section>
+                <q-input filled v-model="settingValue" label="Setting Name"></q-input>
+              </q-card-section>
+
+              <q-card-actions align="right">
+                <q-btn color="primary" onclick="saveSettings()">Save</q-btn>
+              </q-card-actions>
+            </q-card>
+          </q-page>
+        </q-page-container>
+      </q-layout>
+    </div>
+
+    <script>
+      const {
+        Quasar,
+        QLayout,
+        QHeader,
+        QToolbar,
+        QToolbarTitle,
+        QPageContainer,
+        QPage,
+        QCard,
+        QCardSection,
+        QInput,
+        QCardActions,
+        QBtn,
+      } = Quasar
+
+      Quasar.lang.set(Quasar.lang.enUS)
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            settingValue: '',
+          }
+        },
+        methods: {
+          saveSettings() {
+            console.log('Settings saved:', this.settingValue)
+          },
+        },
+      })
+
+      app.use(Quasar, {
+        config: {},
+      })
+
+      app.mount('#q-app')
+    </script>
+  </body>
+</html>
