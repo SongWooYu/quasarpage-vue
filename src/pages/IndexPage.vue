@@ -7,7 +7,7 @@
     >
     <q-btn
       color="primary"
-      label="Go to Page 2"
+      label="setting"
       @click="$router.push('/setting')" />
   </q-page>
 </template>

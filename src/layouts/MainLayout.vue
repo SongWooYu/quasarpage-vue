@@ -2,6 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <!-- Menu button -->
         <q-btn
           flat
           dense
@@ -9,6 +10,16 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
+        />
+
+        <!-- Backspace button -->
+        <q-btn
+          flat
+          dense
+          round
+          icon="arrow_back"
+          aria-label="Go Back"
+          @click="goBack"
         />
 
         <q-toolbar-title>
@@ -25,9 +36,7 @@
       bordered
     >
       <q-list>
-        <q-item-label
-          header
-        >
+        <q-item-label header>
           Essential Links
         </q-item-label>
 
@@ -47,7 +56,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import EssentialLink from 'components/EssentialLink.vue'
+
+const router = useRouter()
+const leftDrawerOpen = ref(false)
 
 const linksList = [
   {
@@ -94,9 +107,11 @@ const linksList = [
   }
 ]
 
-const leftDrawerOpen = ref(false)
-
 function toggleLeftDrawer () {
   leftDrawerOpen.value = !leftDrawerOpen.value
+}
+
+function goBack () {
+  router.back()
 }
 </script>

@@ -4,16 +4,16 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: 'setting', component: () => import('pages/SettingPage.vue') }
+      { path: 'setting', component: () => import('pages/SettingPage.vue') },
+      { path: 'password', component: () => import('pages/PasswordPage.vue') }
     ]
   },
 
-  // Always leave this as last one,
-  // but you can also remove it
+  // Always leave this as the last one
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
   }
 ]
 
-export default routes
+export default routes;
