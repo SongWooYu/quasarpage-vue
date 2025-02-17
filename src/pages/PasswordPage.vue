@@ -2,7 +2,7 @@
     <q-page class="q-pa-md">
       <q-card>
         <q-card-section>
-          <div class="text-h6">Enter Password</div>
+          <div class="text-h6">Password</div>
         </q-card-section>
   
         <q-card-section>
@@ -10,7 +10,7 @@
         </q-card-section>
   
         <q-card-actions align="right">
-          <q-btn color="primary" @click="checkPassword">Submit</q-btn>
+          <q-btn color="primary" @click="checkPassword">Sign in</q-btn>
         </q-card-actions>
       </q-card>
     </q-page>
@@ -27,10 +27,10 @@
     methods: {
       checkPassword() {
         // Define your actual password here
-        const correctPassword = 'your-password';
+        const correctPassword = '010';
   
         if (this.password === correctPassword) {
-          this.$router.push('/developer-settings');
+          this.$router.push('/dysetting');
         } else {
           this.$q.notify({
             color: 'negative',

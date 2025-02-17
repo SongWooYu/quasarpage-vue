@@ -11,6 +11,14 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
+        <q-btn
+          flat
+          dense
+          round
+          icon="home"
+          aria-label="Home"
+          @click="$router.push('/')"
+        />
 
         <!-- Backspace button -->
         <q-btn

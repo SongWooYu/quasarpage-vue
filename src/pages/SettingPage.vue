@@ -203,13 +203,6 @@
     </div>
   </q-page>
 
-  <q-btn
-    class="fixed-bottom-right q-ma-md"
-    color="primary"
-    fab
-    icon="password"
-    @click="$router.push('/password')"
-    />
 </template>
 
 <script>
